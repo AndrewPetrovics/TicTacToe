@@ -10,10 +10,10 @@ npx react-native run-ios
 ```
 
 ## Architecture
-The app uses a psuedo-MVVM architecture with three basic layers: app, database, and business logic.
+The app uses a pseudo-MVVM architecture with three basic layers: app, database, and business logic.
 
 #### Why MVVM?
-This is typically my go to architecture for mobile or desktop application development (regardless of the language or frameworkout) mainly because I really like the fairly strict decoupling of the view and view model which makes maintaincence a lot eaiser in my opinion.
+This is typically my go to architecture for mobile or desktop application development (regardless of the language or frameworkout) mainly because I really like the fairly strict decoupling of the view and view model which makes maintenance a lot easier in my opinion.
 
 #### Is MVVM the best choice?
 For React Native, probably not, due to the coupling nature of state and rendering. I've basically side-stepped all state management protocols and am pretty sure it's really inefficient from a rendering standpoint. However, for basic apps like this, I can't detect any performance issues.
@@ -38,4 +38,4 @@ Android will show a timer warning on Android for some reason. This is mainly bec
 This was tested on an iPhoneX simulator and Android Pixel 2 emulator. This was not tested on a physical device.
 
 #### Total time spent
-~2-3 hours total inbetween other tasks
+~2-3 hours total in-between other tasks
