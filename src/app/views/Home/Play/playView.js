@@ -47,7 +47,7 @@ const TicTacToeBoard = ({vm}) => {
   return (
       <View style={styles.board}>
           {[...Array(3)].map((x, i) =>
-              <View  style={styles.ticTacToeRow}>
+              <View key={i} style={styles.ticTacToeRow}>
                   {[...Array(3)].map((x, j) =>
                       < TicTacToeButton key={(i+1)*(j+1)} x={i} y={j} vm={vm} />
                   )}
@@ -65,7 +65,7 @@ const TicTacToeButton = ({ x, y, vm }) => {
   return (
         
     <TouchableOpacity style={styles.tacTacToeButton}
-      onPress={vm.winner == null && vm.game[x][y] == 0 && vm.isStarted ? () => vm.ticTacToeButtonPressed(x, y) : null} >
+      onPress={vm.winner == null && vm.game[x][y] == 0  ? () => vm.ticTacToeButtonPressed(x, y) : null} >
       {
         vm.game[x][y] == 1 ?
           <Image source={require("../../../../../assets/x.png")} /> :

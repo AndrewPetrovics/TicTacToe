@@ -3,13 +3,17 @@ import React, { Component } from 'react';
 import { StyleSheet, Button, TouchableOpacity, Text, View } from 'react-native';
 
 
-const StatNumber = (props) => {
+const BigStatNumber = (props) => {
     return (
         <View style={styles.container}>
             <Text style={styles.number}>{props.number}</Text>
             <Text style={styles.title}>{props.title}</Text>
         </View>
     )
+        
+
+
+
 }
 
 const styles = StyleSheet.create({
@@ -21,7 +25,7 @@ const styles = StyleSheet.create({
     number: {
         alignSelf: 'center',
         color: 'white',
-        fontSize: 32.0,
+        fontSize: 64.0,
         fontWeight: 'bold',
        
     },
@@ -37,5 +41,5 @@ const styles = StyleSheet.create({
 
 });
 
-export default StatNumber;
+export default BigStatNumber;
 

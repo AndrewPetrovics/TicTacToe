@@ -32,7 +32,6 @@ import {
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 
-console.log("initlizeing")
 Database.initialize();
 AuthSvc.signInUserAnonymously();
 
@@ -52,6 +51,7 @@ const AppNavigator = createStackNavigator({
     headerTitleStyle: {
       fontWeight: 'bold',
     },
+    headerBackTitle: "Back"
     
   },
   titleStyle: { color: 'white' }, tintColor: 'white',

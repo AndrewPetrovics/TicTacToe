@@ -2,8 +2,10 @@
 import React, { Component } from 'react';
 import HistoryViewModel from './historyViewModel';
 import moment from 'moment';
+moment.suppressDeprecationWarnings = true;
 import { StyleSheet, Text } from 'react-native';
 import ListTile from '../../../components/ListTile';
+import { ScrollView } from 'react-native-gesture-handler';
 
 
 
@@ -21,6 +23,7 @@ export default class HistoryView extends Component {
 
 
   render() {
+    
     if (this.vm.isLoading) {
       return <Text style={styles.centerText}>Loading...</Text>
     }
@@ -28,8 +31,14 @@ export default class HistoryView extends Component {
       return <Text style={styles.centerText}>You have no played any games yet</Text>
     }
     else {
-      return this.vm.gameHistories.map((gameHistory) =>
-        <ListTile title={this.vm.getTitleFromGameHistory(gameHistory)} subtitle={moment(gameHistory.date).fromNow()} />
+      return(
+        <ScrollView>
+          {
+            this.vm.gameHistories.map((gameHistory) =>
+              <ListTile key={gameHistory.id} title={this.vm.getTitleFromGameHistory(gameHistory)} subtitle={moment(gameHistory.date).fromNow()} />
+            )
+          }
+        </ScrollView>
       );
     }
   }

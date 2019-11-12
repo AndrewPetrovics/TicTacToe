@@ -20,8 +20,10 @@ export default class PlayViewModel {
     this.game[x][y] = this.whosTurn;
     this.whosTurn = this.whosTurn % 2 + 1;
     this.winner = this._getWinner();
+    this.isStarted = true;
     this.onDataChanged();
 
+    // Did we finish the game?
     if (this.winner != null){
       this._saveGameToDatabase();
     }

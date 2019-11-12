@@ -14,7 +14,7 @@ export default class HistoryViewModel {
 
     async _loadData(){
         this.isLoading = true;
-        this.onDataChanged();
+        
 
         var userId = await AuthSvc.getCurrentUserId();
         this.gameHistories = await GameHistorySvc.getGameHistoriesByUserId(userId);

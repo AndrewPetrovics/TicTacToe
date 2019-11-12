@@ -4,7 +4,12 @@ import * as firebase from "firebase";
 export default class AuthSvc{
 
     static async getCurrentUserId(){
-        return firebase.auth().currentUser.uid;
+        var user = firebase.auth().currentUser;
+        if (user == null){
+            var result = await firebase.auth().signInAnonymously();
+            user = result.user;
+        }
+        return user.uid;
     }
 
     // static async getCurrentUser(){

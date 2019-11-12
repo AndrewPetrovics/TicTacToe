@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import StatsViewModel from './statsViewModel';
 
 
+
 import {
     SafeAreaView,
     StyleSheet,
@@ -16,6 +17,7 @@ import {
 
 } from 'react-native';
 import StatNumber from '../../../components/StatNumber';
+import BigStatNumber from '../../../components/BigStatNumber';
 
 
 
@@ -30,6 +32,10 @@ export default class StatsView extends Component {
         this.vm = new StatsViewModel(() => { this.setState({}) }, props);
     }
 
+    componentDidUpdate(){
+        this.vm.isMounted = true;
+    }
+
 
     render() {
         if (this.vm.isLoading) {
@@ -37,10 +43,13 @@ export default class StatsView extends Component {
         }
         return (
             <SafeAreaView style={styles.container}>
-                <StatNumber title="Games Played" number={this.vm.getTotalGames()} />
-                <StatNumber title="Player 1 wins" number={this.vm.getTotalPlayer1Wins()} />
-                <StatNumber title="Player 2 wins" number={this.vm.getTotalPlayer2Wins()} />
-                <StatNumber title="Draws" number={this.vm.getTotalDraws()} />
+                <BigStatNumber title="Total Games Played" number={this.vm.getTotalGames()} />
+                <View style={styles.row}>
+                    <StatNumber title="Player 1 wins" number={this.vm.getTotalPlayer1Wins()} />
+                    <StatNumber title="Draws" number={this.vm.getTotalDraws()} />
+                    <StatNumber title="Player 2 wins" number={this.vm.getTotalPlayer2Wins()} />
+                    
+                </View>
             </SafeAreaView>
 
         )
@@ -53,7 +62,7 @@ export default class StatsView extends Component {
 const styles = StyleSheet.create({
     container: {
         height: '80%',
-        justifyContent: 'space-around',
+        justifyContent: 'center',
         alignItems: 'stretch',
 
     },
@@ -63,6 +72,12 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         justifyContent: 'center',
     },
+    row:{
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginTop: 45.0,
+        justifyContent: 'space-around',
+    }
 });
 
 

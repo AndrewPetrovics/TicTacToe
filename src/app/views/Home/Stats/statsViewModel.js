@@ -9,13 +9,15 @@ export default class StatsViewModel {
     constructor(onDataChanged, props) {
         this.onDataChanged = onDataChanged;
         this.props = props;
+        this.isMounted = false;
+        //this.isLoading = true;
 
         this._loadData();
     }
 
     async _loadData() {
         this.isLoading = true;
-        this.onDataChanged();
+        //this.onDataChanged();
 
         var userId = await AuthSvc.getCurrentUserId();
         this.gameHistories = await GameHistorySvc.getGameHistoriesByUserId(userId);
