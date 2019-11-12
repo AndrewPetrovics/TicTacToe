@@ -36,3 +36,6 @@ Android will show a timer warning on Android for some reason. This is mainly bec
 
 #### Testing
 This was tested on an iPhoneX simulator and Android Pixel 2 emulator. This was not tested on a physical device.
+
+#### Total time spent
+~2-3 hours total inbetween other tasks
