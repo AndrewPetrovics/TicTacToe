@@ -1,6 +1,13 @@
-# TicTacToe
+# Tic Tac Toe
 A simple app meant to demonstrate basic proficiency using React Native.
 
+## How to run
+```
+git clone https://github.com/AndrewPetrovics/TicTacToe
+cd TicTacToe
+npm install
+npx react-native run-ios 
+```
 
 ## Architecture
 The app uses a psuedo-MVVM architecture with three basic layers: app, database, and business logic.
