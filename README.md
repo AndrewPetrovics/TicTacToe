@@ -33,3 +33,6 @@ I found it difficult to demonstrate basic code organization and project structur
 
 #### Firebase timer warnings on Android
 Android will show a timer warning on Android for some reason. This is mainly because I used the web SDK instead of the native Android SDK in the interest of time.
+
+#### Testing
+This was tested on an iPhoneX simulator and Android Pixel 2 emulator. This was not tested on a physical device.
